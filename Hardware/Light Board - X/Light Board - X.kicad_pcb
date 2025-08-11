@@ -7,6 +7,12 @@
 		(legacy_teardrops no)
 	)
 	(paper "A")
+	(title_block
+		(title "Light Board - X")
+		(date "2025-08-10")
+		(rev "${REV_BOARD}")
+		(comment 1 "Isaac Rex")
+	)
 	(layers
 		(0 "F.Cu" signal)
 		(2 "B.Cu" signal)
@@ -28,9 +34,9 @@
 		(29 "B.CrtYd" user "B.Courtyard")
 		(35 "F.Fab" user)
 		(33 "B.Fab" user)
-		(39 "User.1" user)
-		(41 "User.2" user)
-		(43 "User.3" user)
+		(39 "User.1" user "User.FabDrawing")
+		(41 "User.2" user "User.TopAsyDrawing")
+		(43 "User.3" user "User.BotAsyDrawing")
 		(45 "User.4" user)
 		(47 "User.5" user)
 		(49 "User.6" user)
@@ -398,17 +404,6 @@
 			(uuid "a61e3f37-7169-4866-b462-891f75cde875")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/LED_SMD.3dshapes/LED_Everlight-SMD3528_3.5x2.8mm_67-21ST.step"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
 	)
 	(footprint "TestPoint:TestPoint_Pad_2.0x2.0mm"
 		(layer "F.Cu")
@@ -822,17 +817,6 @@
 			(uuid "ec18b263-122f-4924-8671-64def7ee8a13")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/LED_SMD.3dshapes/LED_Everlight-SMD3528_3.5x2.8mm_67-21ST.step"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
 	)
 	(footprint "LED_SMD:LED_Everlight-SMD3528_3.5x2.8mm_67-21ST"
 		(layer "F.Cu")
@@ -841,7 +825,7 @@
 		(descr "3.5mm x 2.8mm mid-power LED, https://www.everlight.com/wp-content/plugins/ItemRelationship/product_files/pdf/DSE-0020730-67-21ST-KK6C-HXXXX96Z6-2T_V3.pdf")
 		(tags "LED 3528")
 		(property "Reference" "D8"
-			(at -3.91337 -0.024604 320)
+			(at -3.91337 -0.024605 140)
 			(layer "F.SilkS")
 			(uuid "b59f1167-aeb0-4acb-a0c0-5669779da3c4")
 			(effects
@@ -852,7 +836,7 @@
 			)
 		)
 		(property "Value" "White"
-			(at 0 2.5 320)
+			(at 0 2.5 140)
 			(layer "F.Fab")
 			(uuid "3c53bfb2-4f5c-46b3-b503-db9a5f97640e")
 			(effects
@@ -1053,7 +1037,7 @@
 			(uuid "56f8ebb0-cc6d-4004-abe7-6a733c9a5f37")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 320)
+			(at 0 0 140)
 			(layer "F.Fab")
 			(uuid "0a1ffd08-9e6d-4dd4-b001-43c2268c3925")
 			(effects
@@ -1084,17 +1068,6 @@
 			(uuid "ca4d6d83-276a-4f6a-b406-49fb976618ba")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/LED_SMD.3dshapes/LED_Everlight-SMD3528_3.5x2.8mm_67-21ST.step"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
 	)
 	(footprint "LED_SMD:LED_Everlight-SMD3528_3.5x2.8mm_67-21ST"
 		(layer "F.Cu")
@@ -1346,17 +1319,6 @@
 			(uuid "7f5a1315-6661-4630-b8ac-4a5295f0a2d4")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/LED_SMD.3dshapes/LED_Everlight-SMD3528_3.5x2.8mm_67-21ST.step"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
 	)
 	(footprint "LED_SMD:LED_Everlight-SMD3528_3.5x2.8mm_67-21ST"
 		(layer "F.Cu")
@@ -1365,7 +1327,7 @@
 		(descr "3.5mm x 2.8mm mid-power LED, https://www.everlight.com/wp-content/plugins/ItemRelationship/product_files/pdf/DSE-0020730-67-21ST-KK6C-HXXXX96Z6-2T_V3.pdf")
 		(tags "LED 3528")
 		(property "Reference" "D6"
-			(at -3.772486 0.012277 220)
+			(at -3.772486 0.012277 40)
 			(layer "F.SilkS")
 			(uuid "8811841e-5938-408c-b793-9b32ef39479a")
 			(effects
@@ -1376,7 +1338,7 @@
 			)
 		)
 		(property "Value" "White"
-			(at 0 2.5 220)
+			(at 0 2.5 40)
 			(layer "F.Fab")
 			(uuid "b310aa0a-7881-4352-9867-621f095f2d97")
 			(effects
@@ -1577,7 +1539,7 @@
 			(uuid "756060cd-47e1-451e-9e14-2d50f030f728")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 220)
+			(at 0 0 40)
 			(layer "F.Fab")
 			(uuid "77bb71b2-a4c6-4766-af69-b63471287ba4")
 			(effects
@@ -1608,17 +1570,6 @@
 			(uuid "104a0ffc-8987-4cb8-8860-888135f6698d")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/LED_SMD.3dshapes/LED_Everlight-SMD3528_3.5x2.8mm_67-21ST.step"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
 	)
 	(footprint "LED_SMD:LED_Everlight-SMD3528_3.5x2.8mm_67-21ST"
 		(layer "F.Cu")
@@ -1627,7 +1578,7 @@
 		(descr "3.5mm x 2.8mm mid-power LED, https://www.everlight.com/wp-content/plugins/ItemRelationship/product_files/pdf/DSE-0020730-67-21ST-KK6C-HXXXX96Z6-2T_V3.pdf")
 		(tags "LED 3528")
 		(property "Reference" "D7"
-			(at -3.84947 -1.268125 220)
+			(at -3.84947 -1.268125 40)
 			(layer "F.SilkS")
 			(uuid "d57858b4-b0d7-4f4c-a019-effefd15ab17")
 			(effects
@@ -1638,7 +1589,7 @@
 			)
 		)
 		(property "Value" "White"
-			(at 0 2.5 220)
+			(at 0 2.5 40)
 			(layer "F.Fab")
 			(uuid "e3be64e3-4416-4e75-90ce-ed62d33e3129")
 			(effects
@@ -1839,7 +1790,7 @@
 			(uuid "4b92016e-1fea-42f3-b71c-6f462144e5a2")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 220)
+			(at 0 0 40)
 			(layer "F.Fab")
 			(uuid "fdb22a72-632c-45b0-8a43-950a5a9152a8")
 			(effects
@@ -1870,17 +1821,6 @@
 			(uuid "32b6f4c8-4653-4d56-b452-6abea202996b")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/LED_SMD.3dshapes/LED_Everlight-SMD3528_3.5x2.8mm_67-21ST.step"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
 	)
 	(footprint "LED_SMD:LED_Everlight-SMD3528_3.5x2.8mm_67-21ST"
 		(layer "F.Cu")
@@ -1889,7 +1829,7 @@
 		(descr "3.5mm x 2.8mm mid-power LED, https://www.everlight.com/wp-content/plugins/ItemRelationship/product_files/pdf/DSE-0020730-67-21ST-KK6C-HXXXX96Z6-2T_V3.pdf")
 		(tags "LED 3528")
 		(property "Reference" "D9"
-			(at -3.772866 1.203846 320)
+			(at -3.772866 1.203846 140)
 			(layer "F.SilkS")
 			(uuid "5a3901e5-2400-42ec-a15a-d08f8e5c2632")
 			(effects
@@ -1900,7 +1840,7 @@
 			)
 		)
 		(property "Value" "White"
-			(at 0 2.5 320)
+			(at 0 2.5 140)
 			(layer "F.Fab")
 			(uuid "a1413415-e133-4f6e-9639-734b06e5d90a")
 			(effects
@@ -2101,7 +2041,7 @@
 			(uuid "5c380feb-785a-43f7-9f74-7dd721ba303b")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 320)
+			(at 0 0 140)
 			(layer "F.Fab")
 			(uuid "27e8b529-ba6d-4877-ac9f-d2f1d13c54ca")
 			(effects
@@ -2132,17 +2072,6 @@
 			(uuid "528ab5c2-0b3e-42da-ba82-db03818d0b6e")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/LED_SMD.3dshapes/LED_Everlight-SMD3528_3.5x2.8mm_67-21ST.step"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
 	)
 	(footprint "TestPoint:TestPoint_Pad_2.0x2.0mm"
 		(layer "F.Cu")
@@ -2556,17 +2485,6 @@
 			(uuid "c2aea86d-7161-455a-8515-dd11417155ee")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/LED_SMD.3dshapes/LED_Everlight-SMD3528_3.5x2.8mm_67-21ST.step"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
 	)
 	(footprint "irex_Aesthetic:Logo_irex_2.5x2.8mm_Silk"
 		(layer "F.Cu")
@@ -2699,7 +2617,7 @@
 		(descr "3.5mm x 2.8mm mid-power LED, https://www.everlight.com/wp-content/plugins/ItemRelationship/product_files/pdf/DSE-0020730-67-21ST-KK6C-HXXXX96Z6-2T_V3.pdf")
 		(tags "LED 3528")
 		(property "Reference" "D2"
-			(at -3.776101 -0.03942 220)
+			(at -3.776101 -0.03942 40)
 			(layer "F.SilkS")
 			(uuid "5e1a1ad4-8e89-4100-82ed-75a4386ab845")
 			(effects
@@ -2710,7 +2628,7 @@
 			)
 		)
 		(property "Value" "White"
-			(at 0 2.5 220)
+			(at 0 2.5 40)
 			(layer "F.Fab")
 			(uuid "5b8c04fa-639a-423f-a736-fb7adcb1e01a")
 			(effects
@@ -2911,7 +2829,7 @@
 			(uuid "2aab82b1-6e99-4b82-9bc8-f63aa44583ac")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 220)
+			(at 0 0 40)
 			(layer "F.Fab")
 			(uuid "81da3f73-1c73-404a-953e-008d17f480fb")
 			(effects
@@ -2942,17 +2860,6 @@
 			(uuid "d3c46422-64ad-416a-a3ae-5e47383b4e81")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/LED_SMD.3dshapes/LED_Everlight-SMD3528_3.5x2.8mm_67-21ST.step"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
 	)
 	(gr_arc
 		(start 165.382925 89.571719)
@@ -3360,7 +3267,7 @@
 			(type default)
 		)
 		(fill no)
-		(layer "User.1")
+		(layer "User.4")
 		(uuid "2087c352-dddd-491f-bc2e-b2179a69f19b")
 	)
 	(gr_circle
@@ -3371,7 +3278,7 @@
 			(type default)
 		)
 		(fill no)
-		(layer "User.1")
+		(layer "User.4")
 		(uuid "27223709-edb0-487e-9912-38ad99652f54")
 	)
 	(gr_circle
@@ -3382,7 +3289,7 @@
 			(type default)
 		)
 		(fill no)
-		(layer "User.1")
+		(layer "User.4")
 		(uuid "4310c6e3-b7ea-4260-b7ed-8a307be6b53a")
 	)
 	(gr_circle
@@ -3393,7 +3300,7 @@
 			(type default)
 		)
 		(fill no)
-		(layer "User.1")
+		(layer "User.4")
 		(uuid "471293bb-07c8-4501-9196-555976d32ebc")
 	)
 	(gr_circle
@@ -3404,7 +3311,7 @@
 			(type default)
 		)
 		(fill no)
-		(layer "User.1")
+		(layer "User.4")
 		(uuid "62efee9c-f703-40f1-86d0-bbd3288190a3")
 	)
 	(gr_line
@@ -3414,7 +3321,7 @@
 			(width 0.05)
 			(type dash)
 		)
-		(layer "User.1")
+		(layer "User.4")
 		(uuid "8d20374e-c187-4600-9ee6-3ad2205d0889")
 	)
 	(gr_line
@@ -3424,7 +3331,7 @@
 			(width 0.05)
 			(type dash)
 		)
-		(layer "User.1")
+		(layer "User.4")
 		(uuid "a3d87d04-5b2f-4f39-bd40-9057cd9d6988")
 	)
 	(gr_circle
@@ -3435,7 +3342,7 @@
 			(type default)
 		)
 		(fill no)
-		(layer "User.1")
+		(layer "User.4")
 		(uuid "a890b997-dc6b-4ce2-aed6-c3cf4a2a993c")
 	)
 	(gr_circle
@@ -3446,7 +3353,7 @@
 			(type default)
 		)
 		(fill no)
-		(layer "User.1")
+		(layer "User.4")
 		(uuid "f15efbae-fd8d-47ba-84b9-d3762ca050d6")
 	)
 	(gr_circle
@@ -3457,7 +3364,7 @@
 			(type default)
 		)
 		(fill no)
-		(layer "User.1")
+		(layer "User.4")
 		(uuid "f36ca94d-8095-40ae-8a2e-d37cf519b945")
 	)
 	(gr_circle
@@ -3468,7 +3375,7 @@
 			(type default)
 		)
 		(fill no)
-		(layer "User.1")
+		(layer "User.4")
 		(uuid "f5ae9d45-eaf0-4772-bc09-1ac26dec2703")
 	)
 	(gr_text "Light\nBoard X"
@@ -3526,6 +3433,117 @@
 			(font
 				(size 2 2)
 				(thickness 0.3)
+			)
+		)
+	)
+	(dimension
+		(type orthogonal)
+		(layer "User.1")
+		(uuid "488c8b11-8f95-4d69-83dc-f7161d5c0910")
+		(pts
+			(xy 171.28 90.03) (xy 125.52 89.567813)
+		)
+		(height -6.31)
+		(orientation 0)
+		(format
+			(prefix "")
+			(suffix "")
+			(units 3)
+			(units_format 1)
+			(precision 2)
+		)
+		(style
+			(thickness 0.15)
+			(arrow_length 1.27)
+			(text_position_mode 0)
+			(arrow_direction outward)
+			(extension_height 0.58642)
+			(extension_offset 0.5)
+			(keep_text_aligned yes)
+		)
+		(gr_text "45.76 mm"
+			(at 148.4 82.57 0)
+			(layer "User.1")
+			(uuid "488c8b11-8f95-4d69-83dc-f7161d5c0910")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+	)
+	(dimension
+		(type orthogonal)
+		(layer "User.1")
+		(uuid "82af0649-f36e-427c-9e9d-fff62a369931")
+		(pts
+			(xy 122.549919 127.2) (xy 174.250081 127.2)
+		)
+		(height 7.8)
+		(orientation 0)
+		(format
+			(prefix "")
+			(suffix "")
+			(units 3)
+			(units_format 1)
+			(precision 2)
+		)
+		(style
+			(thickness 0.15)
+			(arrow_length 1.27)
+			(text_position_mode 0)
+			(arrow_direction outward)
+			(extension_height 0.58642)
+			(extension_offset 0.5)
+			(keep_text_aligned yes)
+		)
+		(gr_text "51.70 mm"
+			(at 148.4 133.85 0)
+			(layer "User.1")
+			(uuid "82af0649-f36e-427c-9e9d-fff62a369931")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+	)
+	(dimension
+		(type orthogonal)
+		(layer "User.1")
+		(uuid "b6586b4a-85a3-481a-98d8-f54ceb3f1e82")
+		(pts
+			(xy 173.650081 127.79998) (xy 170.679441 89.431346)
+		)
+		(height 8.849919)
+		(orientation 1)
+		(format
+			(prefix "")
+			(suffix "")
+			(units 3)
+			(units_format 1)
+			(precision 2)
+		)
+		(style
+			(thickness 0.15)
+			(arrow_length 1.27)
+			(text_position_mode 0)
+			(arrow_direction outward)
+			(extension_height 0.58642)
+			(extension_offset 0.5)
+			(keep_text_aligned yes)
+		)
+		(gr_text "38.37 mm"
+			(at 181.35 108.615663 90)
+			(layer "User.1")
+			(uuid "b6586b4a-85a3-481a-98d8-f54ceb3f1e82")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
 			)
 		)
 	)

@@ -72,7 +72,7 @@
           ""
         ],
         [
-          "silk_edge_clearance|166580502|123892090|e0396a4d-a768-4ab4-8c1f-b52a533a5f53|c5680909-fb66-41bf-bc12-0ee6e2ad42af",
+          "silk_edge_clearance|166649919|123900000|091a2ba6-1a71-42fc-91e0-da85f5455c6f|c5680909-fb66-41bf-bc12-0ee6e2ad42af",
           ""
         ]
       ],
@@ -600,7 +600,18 @@
     "meta": {
       "version": 4
     },
-    "net_colors": null,
+    "net_colors": {
+      "/K_D1": "rgb(187, 56, 68)",
+      "/K_D2": "rgb(170, 62, 85)",
+      "/K_D3": "rgb(153, 68, 102)",
+      "/K_D4": "rgb(136, 73, 119)",
+      "/K_D5": "rgb(119, 79, 136)",
+      "/K_D6": "rgb(102, 85, 153)",
+      "/K_D7": "rgb(85, 90, 170)",
+      "/K_D9": "rgb(68, 96, 187)",
+      "/V+": "rgb(204, 51, 51)",
+      "/V-": "rgb(51, 102, 204)"
+    },
     "netclass_assignments": null,
     "netclass_patterns": []
   },
@@ -612,7 +623,7 @@
       "plot": "Release/Production",
       "pos_files": "Release/Production/",
       "specctra_dsn": "",
-      "step": "",
+      "step": "Catalyst-MK1.step",
       "svg": "",
       "vrml": ""
     },
@@ -712,11 +723,17 @@
           "label": "LCSC PN",
           "name": "LCSC PN",
           "show": true
+        },
+        {
+          "group_by": false,
+          "label": "DigiKey PN",
+          "name": "DigiKey PN",
+          "show": false
         }
       ],
       "filter_string": "",
       "group_symbols": true,
-      "include_excluded_from_bom": true,
+      "include_excluded_from_bom": false,
       "name": "",
       "sort_asc": true,
       "sort_field": "Reference"

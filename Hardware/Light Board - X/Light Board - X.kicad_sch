@@ -592,7 +592,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "67-21S/KK5C-H402633Z6/2T(CLW)"
+		(property "MPN" "JB2835AWT-W-H40GA0000-N0000001"
 			(at 113.03 168.91 90)
 			(effects
 				(font
@@ -601,7 +601,16 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC PN" "C385299"
+		(property "LCSC PN" ""
+			(at 113.03 168.91 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" "2138-JB2835AWT-W-H40GA0000-N0000001CT-ND"
 			(at 113.03 168.91 90)
 			(effects
 				(font
@@ -690,7 +699,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "67-21S/KK5C-H402633Z6/2T(CLW)"
+		(property "MPN" "JB2835AWT-W-H40GA0000-N0000001"
 			(at 113.03 158.75 90)
 			(effects
 				(font
@@ -699,7 +708,16 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC PN" "C385299"
+		(property "LCSC PN" ""
+			(at 113.03 158.75 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" "2138-JB2835AWT-W-H40GA0000-N0000001CT-ND"
 			(at 113.03 158.75 90)
 			(effects
 				(font
@@ -709,10 +727,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "a93fd8b7-79ec-4f64-91c3-dc468a2e5022")
+			(uuid "a93fd8b7-79ec-4f64-91c3-dc468a2e5023")
 		)
 		(pin "2"
-			(uuid "d2298224-2bf1-4d6d-a33e-d757439c4b43")
+			(uuid "d2298224-2bf1-4d6d-a33e-d757439c4b44")
 		)
 		(instances
 			(project ""
@@ -788,7 +806,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "67-21S/KK5C-H402633Z6/2T(CLW)"
+		(property "MPN" "JB2835AWT-W-H40GA0000-N0000001"
 			(at 113.03 128.27 90)
 			(effects
 				(font
@@ -797,7 +815,16 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC PN" "C385299"
+		(property "LCSC PN" ""
+			(at 113.03 128.27 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" "2138-JB2835AWT-W-H40GA0000-N0000001CT-ND"
 			(at 113.03 128.27 90)
 			(effects
 				(font
@@ -807,10 +834,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "a93fd8b7-79ec-4f64-91c3-dc468a2e5022")
+			(uuid "a93fd8b7-79ec-4f64-91c3-dc468a2e5024")
 		)
 		(pin "2"
-			(uuid "d2298224-2bf1-4d6d-a33e-d757439c4b43")
+			(uuid "d2298224-2bf1-4d6d-a33e-d757439c4b45")
 		)
 		(instances
 			(project ""
@@ -886,7 +913,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "67-21S/KK5C-H402633Z6/2T(CLW)"
+		(property "MPN" "JB2835AWT-W-H40GA0000-N0000001"
 			(at 113.03 97.79 90)
 			(effects
 				(font
@@ -895,7 +922,16 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC PN" "C385299"
+		(property "LCSC PN" ""
+			(at 113.03 97.79 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" "2138-JB2835AWT-W-H40GA0000-N0000001CT-ND"
 			(at 113.03 97.79 90)
 			(effects
 				(font
@@ -984,7 +1020,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "67-21S/KK5C-H402633Z6/2T(CLW)"
+		(property "MPN" "JB2835AWT-W-H40GA0000-N0000001"
 			(at 113.03 138.43 90)
 			(effects
 				(font
@@ -993,7 +1029,16 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC PN" "C385299"
+		(property "LCSC PN" ""
+			(at 113.03 138.43 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" "2138-JB2835AWT-W-H40GA0000-N0000001CT-ND"
 			(at 113.03 138.43 90)
 			(effects
 				(font
@@ -1003,10 +1048,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "a93fd8b7-79ec-4f64-91c3-dc468a2e5022")
+			(uuid "a93fd8b7-79ec-4f64-91c3-dc468a2e5025")
 		)
 		(pin "2"
-			(uuid "d2298224-2bf1-4d6d-a33e-d757439c4b43")
+			(uuid "d2298224-2bf1-4d6d-a33e-d757439c4b46")
 		)
 		(instances
 			(project ""
@@ -1082,7 +1127,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "67-21S/KK5C-H402633Z6/2T(CLW)"
+		(property "MPN" "JB2835AWT-W-H40GA0000-N0000001"
 			(at 113.03 148.59 90)
 			(effects
 				(font
@@ -1091,7 +1136,16 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC PN" "C385299"
+		(property "LCSC PN" ""
+			(at 113.03 148.59 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" "2138-JB2835AWT-W-H40GA0000-N0000001CT-ND"
 			(at 113.03 148.59 90)
 			(effects
 				(font
@@ -1101,10 +1155,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "a93fd8b7-79ec-4f64-91c3-dc468a2e5022")
+			(uuid "a93fd8b7-79ec-4f64-91c3-dc468a2e5026")
 		)
 		(pin "2"
-			(uuid "d2298224-2bf1-4d6d-a33e-d757439c4b43")
+			(uuid "d2298224-2bf1-4d6d-a33e-d757439c4b47")
 		)
 		(instances
 			(project ""
@@ -1180,7 +1234,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "67-21S/KK5C-H402633Z6/2T(CLW)"
+		(property "MPN" "JB2835AWT-W-H40GA0000-N0000001"
 			(at 113.03 107.95 90)
 			(effects
 				(font
@@ -1189,7 +1243,16 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC PN" "C385299"
+		(property "LCSC PN" ""
+			(at 113.03 107.95 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" "2138-JB2835AWT-W-H40GA0000-N0000001CT-ND"
 			(at 113.03 107.95 90)
 			(effects
 				(font
@@ -1258,6 +1321,15 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 100.33 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" ""
 			(at 100.33 78.74 0)
 			(effects
 				(font
@@ -1343,7 +1415,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "67-21S/KK5C-H402633Z6/2T(CLW)"
+		(property "MPN" "JB2835AWT-W-H40GA0000-N0000001"
 			(at 113.03 118.11 90)
 			(effects
 				(font
@@ -1352,7 +1424,16 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC PN" "C385299"
+		(property "LCSC PN" ""
+			(at 113.03 118.11 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" "2138-JB2835AWT-W-H40GA0000-N0000001CT-ND"
 			(at 113.03 118.11 90)
 			(effects
 				(font
@@ -1362,10 +1443,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "a93fd8b7-79ec-4f64-91c3-dc468a2e5022")
+			(uuid "a93fd8b7-79ec-4f64-91c3-dc468a2e5027")
 		)
 		(pin "2"
-			(uuid "d2298224-2bf1-4d6d-a33e-d757439c4b43")
+			(uuid "d2298224-2bf1-4d6d-a33e-d757439c4b48")
 		)
 		(instances
 			(project ""
@@ -1421,6 +1502,15 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 100.33 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" ""
 			(at 100.33 179.07 0)
 			(effects
 				(font
@@ -1506,7 +1596,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "67-21S/KK5C-H402633Z6/2T(CLW)"
+		(property "MPN" "JB2835AWT-W-H40GA0000-N0000001"
 			(at 113.03 87.63 90)
 			(effects
 				(font
@@ -1515,7 +1605,16 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC PN" "C385299"
+		(property "LCSC PN" ""
+			(at 113.03 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" "2138-JB2835AWT-W-H40GA0000-N0000001CT-ND"
 			(at 113.03 87.63 90)
 			(effects
 				(font
