@@ -180,7 +180,8 @@
           "STANDARD",
           "Sim.Device",
           "Sim.Pins",
-          "SnapEDA_Link"
+          "SnapEDA_Link",
+          "LCSC PN"
         ],
         "fields_ordered": [
           "Reference",
@@ -200,7 +201,7 @@
           "__Description_1",
           "__DigiKey PN",
           "__Field6",
-          "LCSC",
+          "__LCSC",
           "__MANUFACTURER",
           "__MAXIMUM_PACKAGE_HEIGHT",
           "__MF",
@@ -214,7 +215,8 @@
           "__STANDARD",
           "__Sim.Device",
           "__Sim.Pins",
-          "__SnapEDA_Link"
+          "__SnapEDA_Link",
+          "LCSC PN"
         ],
         "filter_string": "",
         "include_excluded_from_bom": false,
@@ -240,7 +242,8 @@
         "field_delimiter": ",",
         "fields_group_by": [
           "Description",
-          "MPN"
+          "MPN",
+          "LCSC PN"
         ],
         "fields_labels": [
           "Reference",
@@ -275,7 +278,8 @@
           "Sim.Device",
           "Sim.Pins",
           "SnapEDA_Link",
-          "Field7"
+          "Field7",
+          "LCSC PN"
         ],
         "fields_ordered": [
           "Reference",
@@ -295,7 +299,7 @@
           "__Description_1",
           "__DigiKey PN",
           "__Field6",
-          "LCSC",
+          "__LCSC",
           "__MANUFACTURER",
           "__MAXIMUM_PACKAGE_HEIGHT",
           "__MF",
@@ -310,7 +314,8 @@
           "__Sim.Device",
           "__Sim.Pins",
           "__SnapEDA_Link",
-          "__Field7"
+          "__Field7",
+          "LCSC PN"
         ],
         "filter_string": "",
         "include_excluded_from_bom": false,
@@ -353,7 +358,7 @@
       "description": "Export PCB Fab PDF",
       "id": "f9ef66d8-e0d4-42a9-8211-66e231664163",
       "settings": {
-        "command": "python3 '${KIPRJMOD}/kicad-python.py' ${KICAD9_3RD_PARTY}/plugins/com_gitlab_dennevi_Board2Pdf/board2pdf-cli.py --ini '${KIPRJMOD}/board2pdf_Fab_2L.config.ini' --ext _FAB '${PROJECTNAME}.kicad_pcb'",
+        "command": "python3 '${KIPRJMOD}/kicad-python.py' ${KICAD9_3RD_PARTY}/plugins/com_gitlab_dennevi_Board2Pdf/board2pdf-cli.py --ini '${KIPRJMOD}/board2pdf_Fab_4L.config.ini' --ext _FAB '${PROJECTNAME}.kicad_pcb'",
         "description": "",
         "ignore_exit_code": false,
         "output_filename": "",
