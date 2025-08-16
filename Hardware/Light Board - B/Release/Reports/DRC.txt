@@ -1,0 +1,10 @@
+** Drc report for Light Board - B.kicad_pcb **
+** Created on 2025-08-11T19:06:56-0500 **
+
+** Found 0 DRC violations **
+
+** Found 0 unconnected pads **
+
+** Found 0 Footprint errors **
+
+** End of Report **

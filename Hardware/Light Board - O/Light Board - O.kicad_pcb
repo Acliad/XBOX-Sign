@@ -3318,7 +3318,7 @@
 			)
 		)
 	)
-	(gr_text "–"
+	(gr_text "-"
 		(at 145.1 112.1 0)
 		(layer "F.SilkS")
 		(uuid "60861044-111f-4b59-b9c6-549ff4760fc5")
