@@ -1,0 +1,9 @@
+(version 1)
+(rule 90OHM_GND_SPACING
+	(constraint clearance (min 0.12mm))
+	(condition "A.inDiffPair('*DP_*') && B.NetName == 'GND'")
+)
+(rule CRYSTAL_GND_SPACING
+	(constraint clearance (min 0.5mm))
+	(condition "A.hasNetclass('Crystal') && B.NetName == 'GND' && B.Type == 'Zone'")
+)
