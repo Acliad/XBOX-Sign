@@ -1,0 +1,5 @@
+Designator,Val,Package,"Mid X","Mid Y",Rotation,Layer
+"J1","USB-C","USB_C_Receptacle_GCT_USB4105-GF-A-060",131.650000,-73.742700,180.000000,top
+"J2","B4B-XH-A","JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical",127.900000,-84.392700,0.000000,top
+"R1","5.1k","R_0603_1608Metric",134.679915,-80.272700,0.000000,top
+"R2","5.1k","R_0603_1608Metric",128.704915,-80.272700,180.000000,top

@@ -1,0 +1,16 @@
+** Drc report for USB-C Board.kicad_pcb **
+** Created on 2025-08-12T19:09:05-0500 **
+
+** Found 0 DRC violations **
+
+** Found 0 unconnected pads **
+
+** Found 2 Footprint errors **
+[footprint_symbol_mismatch]: Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ.
+    Local override; warning
+    @(124.0000 mm, 76.8927 mm): Footprint H1
+[footprint_symbol_mismatch]: Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ.
+    Local override; warning
+    @(139.3000 mm, 76.8927 mm): Footprint H2
+
+** End of Report **

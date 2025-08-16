@@ -1,0 +1,4 @@
+(version 1)
+(rule DP_Connector
+   (constraint clearance (min 0.15mm) (opt 0.3mm))
+   (condition "A.inDiffPair('/DP_USB') && A.intersectsCourtyard('J1') && B.Type != 'Zone"))

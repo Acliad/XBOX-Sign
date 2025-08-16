@@ -1,0 +1,513 @@
+{
+  "jobs": [
+    {
+      "description": "",
+      "id": "3dd5e2c3-080b-4d4c-a0e9-e89afd8ea01f",
+      "settings": {
+        "description": "",
+        "fail_on_error": true,
+        "format": "report",
+        "output_filename": "DRC.txt",
+        "parity": true,
+        "report_all_track_errors": false,
+        "severity": 48,
+        "units": "mm"
+      },
+      "type": "pcb_drc"
+    },
+    {
+      "description": "",
+      "id": "f4b7a270-034e-4a2f-b072-ab24647dac8f",
+      "settings": {
+        "description": "",
+        "exclude_dnp": true,
+        "exclude_footprints_with_th": false,
+        "format": "csv",
+        "gerber_board_edge": true,
+        "negate_bottom_x": false,
+        "output_filename": "./Positions.csv",
+        "side": "both",
+        "single_file": true,
+        "smd_only": false,
+        "units": "mm",
+        "use_drill_place_file_origin": true
+      },
+      "type": "pcb_export_pos"
+    },
+    {
+      "description": "Process position data for JLC",
+      "id": "d6ad33e8-c16a-4145-b13a-1bf0e9311bc7",
+      "settings": {
+        "command": "python3 '${KIPRJMOD}/process-placement.py' ./Release/Production/Positions-all-pos.csv",
+        "description": "",
+        "ignore_exit_code": false,
+        "output_filename": "",
+        "record_output": false
+      },
+      "type": "special_execute"
+    },
+    {
+      "description": "",
+      "id": "59e2524d-ca3d-4fc7-b175-8411a05c8f0e",
+      "settings": {
+        "black_and_white": true,
+        "create_gerber_job_file": true,
+        "crossout_dnp_footprints_on_fab_layers": true,
+        "description": "",
+        "disable_aperture_macros": false,
+        "drawing_sheet": "",
+        "drill_shape": "none",
+        "hide_dnp_footprints_on_fab_layers": false,
+        "include_netlist_attributes": true,
+        "layers": [
+          "B.Cu",
+          "B.Mask",
+          "B.Paste",
+          "B.SilkS",
+          "In30.Cu",
+          "In29.Cu",
+          "In28.Cu",
+          "In27.Cu",
+          "In26.Cu",
+          "In25.Cu",
+          "In24.Cu",
+          "In23.Cu",
+          "In22.Cu",
+          "In21.Cu",
+          "In20.Cu",
+          "In19.Cu",
+          "In18.Cu",
+          "In17.Cu",
+          "In16.Cu",
+          "In15.Cu",
+          "In14.Cu",
+          "In13.Cu",
+          "In12.Cu",
+          "In11.Cu",
+          "In10.Cu",
+          "In9.Cu",
+          "In8.Cu",
+          "In7.Cu",
+          "In6.Cu",
+          "In5.Cu",
+          "In4.Cu",
+          "In3.Cu",
+          "In2.Cu",
+          "In1.Cu",
+          "F.Cu",
+          "F.Mask",
+          "F.Paste",
+          "F.SilkS",
+          "Edge.Cuts"
+        ],
+        "layers_to_include_on_all_layers": [],
+        "mirror": false,
+        "negative": false,
+        "output_filename": "./",
+        "plot_drawing_sheet": false,
+        "plot_footprint_values": true,
+        "plot_pad_numbers": false,
+        "plot_ref_des": true,
+        "precision": 5,
+        "sketch_dnp_footprints_on_fab_layers": true,
+        "sketch_pads_on_fab_layers": false,
+        "subtract_solder_mask_from_silk": false,
+        "use_drill_origin": false,
+        "use_protel_file_extension": false,
+        "use_x2_format": true
+      },
+      "type": "pcb_export_gerbers"
+    },
+    {
+      "description": "",
+      "id": "57fbd490-f986-4450-abf1-656be2d38489",
+      "settings": {
+        "description": "",
+        "drill_origin": "abs",
+        "excellon.combine_pth_npth": true,
+        "excellon.minimal_header": false,
+        "excellon.mirror_y": false,
+        "excellon.oval_drill_route": false,
+        "format": "excellon",
+        "generate_map": true,
+        "gerber_precision": 5,
+        "map_format": "pdf",
+        "output_dir": "./",
+        "units": "in",
+        "zero_format": "decimal"
+      },
+      "type": "pcb_export_drill"
+    },
+    {
+      "description": "Generate Itemized BOM",
+      "id": "55da19c0-5340-4d6c-8473-bef8dbca605c",
+      "settings": {
+        "bom_format_preset_name": "",
+        "bom_preset_name": "",
+        "description": "",
+        "exclude_dnp": true,
+        "field_delimiter": ",",
+        "fields_group_by": [],
+        "fields_labels": [
+          "Reference",
+          "Value",
+          "Footprint",
+          "Datasheet",
+          "Description",
+          "Qty",
+          "#",
+          "ALT PN",
+          "ALT PN1",
+          "ALT PN2",
+          "Availability",
+          "BOM",
+          "Check_prices",
+          "Comment",
+          "Description_1",
+          "DigiKey PN",
+          "Field6",
+          "LCSC",
+          "MANUFACTURER",
+          "MAXIMUM_PACKAGE_HEIGHT",
+          "MF",
+          "MP",
+          "MPN",
+          "Manufacturer",
+          "PARTREV",
+          "Package",
+          "Partnum",
+          "Price",
+          "STANDARD",
+          "Sim.Device",
+          "Sim.Pins",
+          "SnapEDA_Link"
+        ],
+        "fields_ordered": [
+          "Reference",
+          "__Value",
+          "__Footprint",
+          "__Datasheet",
+          "Description",
+          "${QUANTITY}",
+          "__${ITEM_NUMBER}",
+          "__ALT PN",
+          "__ALT PN1",
+          "__ALT PN2",
+          "__Availability",
+          "__BOM",
+          "__Check_prices",
+          "Comment",
+          "__Description_1",
+          "__DigiKey PN",
+          "__Field6",
+          "LCSC",
+          "__MANUFACTURER",
+          "__MAXIMUM_PACKAGE_HEIGHT",
+          "__MF",
+          "__MP",
+          "MPN",
+          "__Manufacturer",
+          "__PARTREV",
+          "__Package",
+          "__Partnum",
+          "__Price",
+          "__STANDARD",
+          "__Sim.Device",
+          "__Sim.Pins",
+          "__SnapEDA_Link"
+        ],
+        "filter_string": "",
+        "include_excluded_from_bom": false,
+        "keep_line_breaks": false,
+        "keep_tabs": false,
+        "output_filename": "./BOM_itemized.csv",
+        "ref_delimiter": ", ",
+        "ref_range_delimiter": "",
+        "sort_asc": true,
+        "sort_field": "Reference",
+        "string_delimiter": "\""
+      },
+      "type": "sch_export_bom"
+    },
+    {
+      "description": "Generate BOM",
+      "id": "f6f438bc-75d6-4807-86c1-0a5a5c25f13f",
+      "settings": {
+        "bom_format_preset_name": "",
+        "bom_preset_name": "",
+        "description": "",
+        "exclude_dnp": true,
+        "field_delimiter": ",",
+        "fields_group_by": [
+          "Description",
+          "MPN"
+        ],
+        "fields_labels": [
+          "Reference",
+          "Value",
+          "Footprint",
+          "Datasheet",
+          "Description",
+          "Qty",
+          "#",
+          "ALT PN",
+          "ALT PN1",
+          "ALT PN2",
+          "Availability",
+          "BOM",
+          "Check_prices",
+          "Comment",
+          "Description_1",
+          "DigiKey PN",
+          "Field6",
+          "LCSC",
+          "MANUFACTURER",
+          "MAXIMUM_PACKAGE_HEIGHT",
+          "MF",
+          "MP",
+          "MPN",
+          "Manufacturer",
+          "PARTREV",
+          "Package",
+          "Partnum",
+          "Price",
+          "STANDARD",
+          "Sim.Device",
+          "Sim.Pins",
+          "SnapEDA_Link",
+          "Field7",
+          "LCSC PN"
+        ],
+        "fields_ordered": [
+          "Reference",
+          "__Value",
+          "__Footprint",
+          "__Datasheet",
+          "Description",
+          "${QUANTITY}",
+          "__${ITEM_NUMBER}",
+          "__ALT PN",
+          "__ALT PN1",
+          "__ALT PN2",
+          "__Availability",
+          "__BOM",
+          "__Check_prices",
+          "Comment",
+          "__Description_1",
+          "DigiKey PN",
+          "__Field6",
+          "LCSC",
+          "__MANUFACTURER",
+          "__MAXIMUM_PACKAGE_HEIGHT",
+          "__MF",
+          "__MP",
+          "MPN",
+          "__Manufacturer",
+          "__PARTREV",
+          "__Package",
+          "__Partnum",
+          "__Price",
+          "__STANDARD",
+          "__Sim.Device",
+          "__Sim.Pins",
+          "__SnapEDA_Link",
+          "__Field7",
+          "__LCSC PN"
+        ],
+        "filter_string": "",
+        "include_excluded_from_bom": false,
+        "keep_line_breaks": false,
+        "keep_tabs": false,
+        "output_filename": "./BOM.csv",
+        "ref_delimiter": ", ",
+        "ref_range_delimiter": "",
+        "sort_asc": true,
+        "sort_field": "Reference",
+        "string_delimiter": "\""
+      },
+      "type": "sch_export_bom"
+    },
+    {
+      "description": "Export SCH PDF",
+      "id": "9f0d2d07-e995-413c-95f2-976fdb4156c0",
+      "settings": {
+        "black_and_white": false,
+        "color_theme": "KiCad Classic",
+        "description": "",
+        "drawing_sheet": "",
+        "format": "pdf",
+        "hpgl_page_size": "default",
+        "hpgl_pen_size": 1.016,
+        "hpgl_plot_origin": "A3",
+        "min_pen_width": 847,
+        "output_dir": "./",
+        "page_size": "auto",
+        "pdf_hierarchical_links": true,
+        "pdf_metadata": true,
+        "pdf_property_popups": true,
+        "plot_all": true,
+        "plot_drawing_sheet": true,
+        "use_background_color": true
+      },
+      "type": "sch_export_plot_pdf"
+    },
+    {
+      "description": "Export PCB Fab PDF",
+      "id": "f9ef66d8-e0d4-42a9-8211-66e231664163",
+      "settings": {
+        "command": "python3 '${KIPRJMOD}/kicad-python.py' ${KICAD9_3RD_PARTY}/plugins/com_gitlab_dennevi_Board2Pdf/board2pdf-cli.py --ini '${KIPRJMOD}/board2pdf_Fab_2L.config.ini' --ext _FAB '${PROJECTNAME}.kicad_pcb'",
+        "description": "",
+        "ignore_exit_code": false,
+        "output_filename": "",
+        "record_output": false
+      },
+      "type": "special_execute"
+    },
+    {
+      "description": "Export PCB Asy PDF",
+      "id": "e3f9a3f1-2c06-4053-b8ad-3cab0c6e2d34",
+      "settings": {
+        "command": "python3 '${KIPRJMOD}/kicad-python.py' ${KICAD9_3RD_PARTY}/plugins/com_gitlab_dennevi_Board2Pdf/board2pdf-cli.py --ini '${KIPRJMOD}/board2pdf_Asy.config.ini' --ext _ASY '${PROJECTNAME}.kicad_pcb'",
+        "description": "",
+        "ignore_exit_code": false,
+        "output_filename": "",
+        "record_output": false
+      },
+      "type": "special_execute"
+    },
+    {
+      "description": "",
+      "id": "74752ae5-5144-42e5-8153-81e9bc12275b",
+      "settings": {
+        "board_only": false,
+        "board_outlines_chaining_epsilon": 0.01,
+        "cut_vias_in_body": false,
+        "description": "",
+        "export_board_body": true,
+        "export_components": true,
+        "export_inner_copper": false,
+        "export_pads": false,
+        "export_silkscreen": true,
+        "export_soldermask": true,
+        "export_tracks": false,
+        "export_zones": false,
+        "fill_all_vias": false,
+        "format": "step",
+        "fuse_shapes": false,
+        "include_dnp": true,
+        "include_unspecified": true,
+        "occt_format": 0,
+        "optimize_step": true,
+        "output_filename": "${PROJECTNAME}.step",
+        "overwrite": false,
+        "subst_models": true,
+        "use_defined_origin": false,
+        "use_drill_origin": true,
+        "use_grid_origin": false,
+        "use_pcb_center_origin": false,
+        "user_origin.x": 0.0,
+        "user_origin.y": 0.0,
+        "vrml_model_dir": "",
+        "vrml_relative_paths": false
+      },
+      "type": "pcb_export_3d"
+    }
+  ],
+  "meta": {
+    "version": 1
+  },
+  "outputs": [
+    {
+      "description": "SCH PDF",
+      "id": "297e5456-7925-49f2-9adf-58506e766af1",
+      "only": [
+        "9f0d2d07-e995-413c-95f2-976fdb4156c0"
+      ],
+      "settings": {
+        "output_path": "./Release/PDFs"
+      },
+      "type": "folder"
+    },
+    {
+      "description": "Reports",
+      "id": "533970bf-6185-4dd6-9880-c51b80e5c369",
+      "only": [
+        "3dd5e2c3-080b-4d4c-a0e9-e89afd8ea01f"
+      ],
+      "settings": {
+        "output_path": "./Release/Reports/"
+      },
+      "type": "folder"
+    },
+    {
+      "description": "PCB PDFs",
+      "id": "e35b0e70-a049-499f-b58d-908219ecc084",
+      "only": [
+        "f9ef66d8-e0d4-42a9-8211-66e231664163",
+        "e3f9a3f1-2c06-4053-b8ad-3cab0c6e2d34"
+      ],
+      "settings": {
+        "output_path": "./Release/PDFs"
+      },
+      "type": "folder"
+    },
+    {
+      "description": "Generate BOM",
+      "id": "a6834bc7-f921-45e1-8102-053773e8b2d7",
+      "only": [
+        "55da19c0-5340-4d6c-8473-bef8dbca605c",
+        "f6f438bc-75d6-4807-86c1-0a5a5c25f13f"
+      ],
+      "settings": {
+        "output_path": "./Release/Production/"
+      },
+      "type": "folder"
+    },
+    {
+      "description": "Position Data",
+      "id": "51e52452-f6aa-497f-b881-81fc43e1ccb0",
+      "only": [
+        "f4b7a270-034e-4a2f-b072-ab24647dac8f"
+      ],
+      "settings": {
+        "output_path": "./Release/Production/"
+      },
+      "type": "folder"
+    },
+    {
+      "description": "Gerbers",
+      "id": "2f263d93-c215-4800-b815-5bdeba9f15fc",
+      "only": [
+        "59e2524d-ca3d-4fc7-b175-8411a05c8f0e",
+        "57fbd490-f986-4450-abf1-656be2d38489"
+      ],
+      "settings": {
+        "format": "zip",
+        "output_path": "./Release/Production/gerbers.zip"
+      },
+      "type": "archive"
+    },
+    {
+      "description": "Process position data for JLC",
+      "id": "98040d70-bec1-45ef-861e-8ff8fd0b8e87",
+      "only": [
+        "d6ad33e8-c16a-4145-b13a-1bf0e9311bc7"
+      ],
+      "settings": {
+        "output_path": "./Release/Production"
+      },
+      "type": "folder"
+    },
+    {
+      "description": "Mechanical",
+      "id": "a344eb60-4551-4e0e-b032-48580dd6ceb7",
+      "only": [
+        "74752ae5-5144-42e5-8153-81e9bc12275b"
+      ],
+      "settings": {
+        "output_path": "./Release/Mechanical/"
+      },
+      "type": "folder"
+    }
+  ]
+}
