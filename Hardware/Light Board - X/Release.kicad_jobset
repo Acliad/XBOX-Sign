@@ -60,10 +60,6 @@
         "hide_dnp_footprints_on_fab_layers": false,
         "include_netlist_attributes": true,
         "layers": [
-          "B.Cu",
-          "B.Mask",
-          "B.Paste",
-          "B.SilkS",
           "In30.Cu",
           "In29.Cu",
           "In28.Cu",

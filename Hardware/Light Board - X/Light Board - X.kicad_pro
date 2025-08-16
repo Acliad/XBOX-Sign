@@ -620,7 +620,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "Release/Production",
+      "plot": "./",
       "pos_files": "Release/Production/",
       "specctra_dsn": "",
       "step": "Catalyst-MK1.step",
