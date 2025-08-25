@@ -307,6 +307,16 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "TODO: Fix pin orientation. Current footprint is backwards from specified diodes"
+		(exclude_from_sim no)
+		(at 106.045 64.77 0)
+		(effects
+			(font
+				(size 1.905 1.905)
+			)
+		)
+		(uuid "44bccace-c614-4be2-a4fd-89ce51b745d5")
+	)
 	(wire
 		(pts
 			(xy 113.03 78.74) (xy 113.03 83.82)
