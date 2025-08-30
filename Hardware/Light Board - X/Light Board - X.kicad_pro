@@ -58,24 +58,7 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [
-        [
-          "silk_edge_clearance|130219498|89439256|4eb4af9d-c27a-4623-8358-c1601311b6dc|5adf359c-2d87-456a-8a9e-cca575d79129",
-          ""
-        ],
-        [
-          "silk_edge_clearance|130219498|89439256|4eb4af9d-c27a-4623-8358-c1601311b6dc|5d68e3bf-b294-4e28-8ab3-7c9b92706350",
-          ""
-        ],
-        [
-          "silk_edge_clearance|166580502|123892090|e0396a4d-a768-4ab4-8c1f-b52a533a5f53|71c68f83-87f9-44e0-b29a-565abdff7a23",
-          ""
-        ],
-        [
-          "silk_edge_clearance|166649919|123900000|091a2ba6-1a71-42fc-91e0-da85f5455c6f|c5680909-fb66-41bf-bc12-0ee6e2ad42af",
-          ""
-        ]
-      ],
+      "drc_exclusions": [],
       "meta": {
         "version": 2
       },
@@ -495,6 +478,7 @@
       "single_global_label": "ignore",
       "unannotated": "error",
       "unconnected_wire_endpoint": "warning",
+      "undefined_netclass": "error",
       "unit_value_mismatch": "error",
       "unresolved_variable": "error",
       "wire_dangling": "error"
@@ -608,6 +592,7 @@
       "/K_D5": "rgb(119, 79, 136)",
       "/K_D6": "rgb(102, 85, 153)",
       "/K_D7": "rgb(85, 90, 170)",
+      "/K_D8": "rgb(68, 96, 187)",
       "/K_D9": "rgb(68, 96, 187)",
       "/V+": "rgb(204, 51, 51)",
       "/V-": "rgb(51, 102, 204)"
@@ -627,7 +612,7 @@
       "svg": "",
       "vrml": ""
     },
-    "page_layout_descr_file": "/Users/isaacrex/KiCad/Pages/irex_Logo-Text-Narrow.kicad_wks"
+    "page_layout_descr_file": "kicad-embed://irex_PCB_Logo-Text-Narrow.kicad_wks"
   },
   "schematic": {
     "annotate_start_num": 0,
@@ -766,7 +751,7 @@
       "version": 1
     },
     "net_format_name": "",
-    "page_layout_descr_file": "/Users/isaacrex/KiCad/Pages/irex_Logo-Text-Narrow.kicad_wks",
+    "page_layout_descr_file": "kicad-embed://irex_SCH_Logo-Text-Narrow.kicad_wks",
     "plot_directory": "",
     "space_save_all_events": true,
     "spice_current_sheet_as_root": false,
@@ -785,7 +770,7 @@
     ]
   ],
   "text_variables": {
-    "REV_BOARD": "0",
-    "REV_SCH": "0"
+    "REV_BOARD": "1",
+    "REV_SCH": "1"
   }
 }

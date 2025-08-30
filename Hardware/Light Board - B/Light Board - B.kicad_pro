@@ -58,12 +58,7 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [
-        [
-          "silk_edge_clearance|160269786|113600000|cc8fbe26-610a-4eb5-af1e-3ccc725656b4|5a8eb0e0-fff4-4bf3-ab8e-6cb255efdadc",
-          ""
-        ]
-      ],
+      "drc_exclusions": [],
       "meta": {
         "version": 2
       },
@@ -483,6 +478,7 @@
       "single_global_label": "ignore",
       "unannotated": "error",
       "unconnected_wire_endpoint": "warning",
+      "undefined_netclass": "error",
       "unit_value_mismatch": "error",
       "unresolved_variable": "error",
       "wire_dangling": "error"
@@ -616,7 +612,7 @@
       "svg": "",
       "vrml": ""
     },
-    "page_layout_descr_file": "/Users/isaacrex/KiCad/Pages/irex_Logo-Text-Narrow.kicad_wks"
+    "page_layout_descr_file": "kicad-embed://irex_PCB_Logo-Text-Narrow.kicad_wks"
   },
   "schematic": {
     "annotate_start_num": 0,
@@ -755,7 +751,7 @@
       "version": 1
     },
     "net_format_name": "",
-    "page_layout_descr_file": "/Users/isaacrex/KiCad/Pages/irex_Logo-Text-Narrow.kicad_wks",
+    "page_layout_descr_file": "kicad-embed://irex_SCH_Logo-Text-Narrow.kicad_wks",
     "plot_directory": "",
     "space_save_all_events": true,
     "spice_current_sheet_as_root": false,
@@ -774,7 +770,7 @@
     ]
   ],
   "text_variables": {
-    "REV_BOARD": "0",
-    "REV_SCH": "0"
+    "REV_BOARD": "1",
+    "REV_SCH": "1"
   }
 }

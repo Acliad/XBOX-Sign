@@ -5,7 +5,7 @@
 	(uuid "c6e6b272-1bb8-4e40-beee-59a44bd978ba")
 	(paper "A" portrait)
 	(title_block
-		(title "Xbox Sign Light Board – X")
+		(title "${PROJECTNAME}")
 		(date "2025-08-09")
 		(rev "${REV_SCH}")
 		(comment 1 "Isaac Rex")
@@ -307,16 +307,6 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "TODO: Fix pin orientation. Current footprint is backwards from specified diodes"
-		(exclude_from_sim no)
-		(at 108.585 64.135 0)
-		(effects
-			(font
-				(size 1.905 1.905)
-			)
-		)
-		(uuid "5ced894f-c08c-4acd-944a-13530ba8e4cd")
-	)
 	(wire
 		(pts
 			(xy 113.03 78.74) (xy 113.03 83.82)
@@ -467,7 +457,7 @@
 		)
 		(uuid "4a497193-6e13-42cc-85a3-f3dc06caa0d3")
 	)
-	(label "K_D9"
+	(label "K_D8"
 		(at 113.03 163.83 180)
 		(effects
 			(font
@@ -539,7 +529,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED_Filled")
-		(at 113.03 168.91 90)
+		(at 113.03 87.63 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -547,8 +537,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2084adcb-c784-494c-a521-438a36474058")
-		(property "Reference" "D9"
-			(at 116.84 167.9574 90)
+		(property "Reference" "D1"
+			(at 116.84 86.6774 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -557,7 +547,7 @@
 			)
 		)
 		(property "Value" "White"
-			(at 116.84 170.4974 90)
+			(at 116.84 89.2174 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -565,8 +555,8 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_Everlight-SMD3528_3.5x2.8mm_67-21ST"
-			(at 113.03 168.91 0)
+		(property "Footprint" "irex_LED_SMD:LED_Cree_J-Series_SMD2835_2.8x3.5mm"
+			(at 113.03 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -574,8 +564,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.everlighteurope.com/custom/files/datasheets/DSE-0018112.pdf"
-			(at 113.03 168.91 0)
+		(property "Datasheet" "https://downloads.cree-led.com/files/ds/j/JSeries-2835-3V-Consolidated.pdf"
+			(at 113.03 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -584,7 +574,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode, filled shape"
-			(at 113.03 168.91 0)
+			(at 113.03 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -593,7 +583,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 116.84 173.0374 90)
+			(at 116.84 91.7574 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -603,7 +593,7 @@
 			)
 		)
 		(property "MPN" "JB2835AWT-W-H40GA0000-N0000001"
-			(at 113.03 168.91 90)
+			(at 113.03 87.63 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -612,7 +602,7 @@
 			)
 		)
 		(property "LCSC PN" ""
-			(at 113.03 168.91 90)
+			(at 113.03 87.63 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -621,7 +611,7 @@
 			)
 		)
 		(property "DigiKey PN" "2138-JB2835AWT-W-H40GA0000-N0000001CT-ND"
-			(at 113.03 168.91 90)
+			(at 113.03 87.63 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -638,7 +628,7 @@
 		(instances
 			(project ""
 				(path "/c6e6b272-1bb8-4e40-beee-59a44bd978ba"
-					(reference "D9")
+					(reference "D1")
 					(unit 1)
 				)
 			)
@@ -646,7 +636,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED_Filled")
-		(at 113.03 158.75 90)
+		(at 113.03 97.79 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -654,8 +644,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4d626f49-7f32-48c3-89b8-fa0aae0ce3b1")
-		(property "Reference" "D8"
-			(at 116.84 157.7974 90)
+		(property "Reference" "D2"
+			(at 116.84 96.8374 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -664,7 +654,7 @@
 			)
 		)
 		(property "Value" "White"
-			(at 116.84 160.3374 90)
+			(at 116.84 99.3774 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -672,8 +662,8 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_Everlight-SMD3528_3.5x2.8mm_67-21ST"
-			(at 113.03 158.75 0)
+		(property "Footprint" "irex_LED_SMD:LED_Cree_J-Series_SMD2835_2.8x3.5mm"
+			(at 113.03 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -681,8 +671,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.everlighteurope.com/custom/files/datasheets/DSE-0018112.pdf"
-			(at 113.03 158.75 0)
+		(property "Datasheet" "https://downloads.cree-led.com/files/ds/j/JSeries-2835-3V-Consolidated.pdf"
+			(at 113.03 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -691,7 +681,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode, filled shape"
-			(at 113.03 158.75 0)
+			(at 113.03 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -700,7 +690,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 116.84 162.8774 90)
+			(at 116.84 101.9174 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -710,7 +700,7 @@
 			)
 		)
 		(property "MPN" "JB2835AWT-W-H40GA0000-N0000001"
-			(at 113.03 158.75 90)
+			(at 113.03 97.79 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -719,7 +709,7 @@
 			)
 		)
 		(property "LCSC PN" ""
-			(at 113.03 158.75 90)
+			(at 113.03 97.79 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -728,7 +718,7 @@
 			)
 		)
 		(property "DigiKey PN" "2138-JB2835AWT-W-H40GA0000-N0000001CT-ND"
-			(at 113.03 158.75 90)
+			(at 113.03 97.79 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -745,7 +735,7 @@
 		(instances
 			(project ""
 				(path "/c6e6b272-1bb8-4e40-beee-59a44bd978ba"
-					(reference "D8")
+					(reference "D2")
 					(unit 1)
 				)
 			)
@@ -779,7 +769,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_Everlight-SMD3528_3.5x2.8mm_67-21ST"
+		(property "Footprint" "irex_LED_SMD:LED_Cree_J-Series_SMD2835_2.8x3.5mm"
 			(at 113.03 128.27 0)
 			(effects
 				(font
@@ -788,7 +778,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.everlighteurope.com/custom/files/datasheets/DSE-0018112.pdf"
+		(property "Datasheet" "https://downloads.cree-led.com/files/ds/j/JSeries-2835-3V-Consolidated.pdf"
 			(at 113.03 128.27 0)
 			(effects
 				(font
@@ -860,7 +850,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED_Filled")
-		(at 113.03 97.79 90)
+		(at 113.03 158.75 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -868,8 +858,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4e933661-5377-4894-85ec-986cc02c3731")
-		(property "Reference" "D2"
-			(at 116.84 96.8374 90)
+		(property "Reference" "D8"
+			(at 116.84 157.7974 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -878,7 +868,7 @@
 			)
 		)
 		(property "Value" "White"
-			(at 116.84 99.3774 90)
+			(at 116.84 160.3374 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -886,8 +876,8 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_Everlight-SMD3528_3.5x2.8mm_67-21ST"
-			(at 113.03 97.79 0)
+		(property "Footprint" "irex_LED_SMD:LED_Cree_J-Series_SMD2835_2.8x3.5mm"
+			(at 113.03 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -895,8 +885,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.everlighteurope.com/custom/files/datasheets/DSE-0018112.pdf"
-			(at 113.03 97.79 0)
+		(property "Datasheet" "https://downloads.cree-led.com/files/ds/j/JSeries-2835-3V-Consolidated.pdf"
+			(at 113.03 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -905,7 +895,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode, filled shape"
-			(at 113.03 97.79 0)
+			(at 113.03 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -914,7 +904,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 116.84 101.9174 90)
+			(at 116.84 162.8774 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -924,7 +914,7 @@
 			)
 		)
 		(property "MPN" "JB2835AWT-W-H40GA0000-N0000001"
-			(at 113.03 97.79 90)
+			(at 113.03 158.75 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -933,7 +923,7 @@
 			)
 		)
 		(property "LCSC PN" ""
-			(at 113.03 97.79 90)
+			(at 113.03 158.75 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -942,7 +932,7 @@
 			)
 		)
 		(property "DigiKey PN" "2138-JB2835AWT-W-H40GA0000-N0000001CT-ND"
-			(at 113.03 97.79 90)
+			(at 113.03 158.75 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -959,402 +949,7 @@
 		(instances
 			(project "Light Board - X"
 				(path "/c6e6b272-1bb8-4e40-beee-59a44bd978ba"
-					(reference "D2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:LED_Filled")
-		(at 113.03 138.43 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "58d829fa-0dc3-4ae6-848a-7290bbfb1485")
-		(property "Reference" "D6"
-			(at 116.84 137.4774 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "White"
-			(at 116.84 140.0174 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_Everlight-SMD3528_3.5x2.8mm_67-21ST"
-			(at 113.03 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.everlighteurope.com/custom/files/datasheets/DSE-0018112.pdf"
-			(at 113.03 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Light emitting diode, filled shape"
-			(at 113.03 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 116.84 142.5574 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "MPN" "JB2835AWT-W-H40GA0000-N0000001"
-			(at 113.03 138.43 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 113.03 138.43 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DigiKey PN" "2138-JB2835AWT-W-H40GA0000-N0000001CT-ND"
-			(at 113.03 138.43 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a93fd8b7-79ec-4f64-91c3-dc468a2e5025")
-		)
-		(pin "2"
-			(uuid "d2298224-2bf1-4d6d-a33e-d757439c4b46")
-		)
-		(instances
-			(project ""
-				(path "/c6e6b272-1bb8-4e40-beee-59a44bd978ba"
-					(reference "D6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:LED_Filled")
-		(at 113.03 148.59 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "68d35af4-4799-450e-9519-6c52ec61f9cc")
-		(property "Reference" "D7"
-			(at 116.84 147.6374 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "White"
-			(at 116.84 150.1774 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_Everlight-SMD3528_3.5x2.8mm_67-21ST"
-			(at 113.03 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.everlighteurope.com/custom/files/datasheets/DSE-0018112.pdf"
-			(at 113.03 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Light emitting diode, filled shape"
-			(at 113.03 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 116.84 152.7174 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "MPN" "JB2835AWT-W-H40GA0000-N0000001"
-			(at 113.03 148.59 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 113.03 148.59 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DigiKey PN" "2138-JB2835AWT-W-H40GA0000-N0000001CT-ND"
-			(at 113.03 148.59 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a93fd8b7-79ec-4f64-91c3-dc468a2e5026")
-		)
-		(pin "2"
-			(uuid "d2298224-2bf1-4d6d-a33e-d757439c4b47")
-		)
-		(instances
-			(project ""
-				(path "/c6e6b272-1bb8-4e40-beee-59a44bd978ba"
-					(reference "D7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:LED_Filled")
-		(at 113.03 107.95 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7ace2363-3f14-450f-9082-3fb3b5e52c2c")
-		(property "Reference" "D3"
-			(at 116.84 106.9974 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "White"
-			(at 116.84 109.5374 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_Everlight-SMD3528_3.5x2.8mm_67-21ST"
-			(at 113.03 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.everlighteurope.com/custom/files/datasheets/DSE-0018112.pdf"
-			(at 113.03 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Light emitting diode, filled shape"
-			(at 113.03 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 116.84 112.0774 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "MPN" "JB2835AWT-W-H40GA0000-N0000001"
-			(at 113.03 107.95 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 113.03 107.95 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DigiKey PN" "2138-JB2835AWT-W-H40GA0000-N0000001CT-ND"
-			(at 113.03 107.95 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3c901a62-0ea7-42bc-8369-d1bd56e47f50")
-		)
-		(pin "2"
-			(uuid "8d03016d-6c75-4ab3-8081-5c52595ee73f")
-		)
-		(instances
-			(project "Light Board - X"
-				(path "/c6e6b272-1bb8-4e40-beee-59a44bd978ba"
-					(reference "D3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector_Generic:Conn_01x01")
-		(at 100.33 78.74 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "879c00ea-3a61-4dae-b29f-847db19bd96d")
-		(property "Reference" "J1"
-			(at 100.33 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "V+"
-			(at 100.33 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_2.0x2.0mm"
-			(at 100.33 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 100.33 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 100.33 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DigiKey PN" ""
-			(at 100.33 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f8dc8309-72d7-444e-8330-418e97f33a2a")
-		)
-		(instances
-			(project ""
-				(path "/c6e6b272-1bb8-4e40-beee-59a44bd978ba"
-					(reference "J1")
+					(reference "D8")
 					(unit 1)
 				)
 			)
@@ -1369,7 +964,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "90562696-f8f1-42ff-8a8c-aa34f6b47000")
+		(uuid "58d829fa-0dc3-4ae6-848a-7290bbfb1485")
 		(property "Reference" "D4"
 			(at 116.84 117.1574 90)
 			(effects
@@ -1388,7 +983,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_Everlight-SMD3528_3.5x2.8mm_67-21ST"
+		(property "Footprint" "irex_LED_SMD:LED_Cree_J-Series_SMD2835_2.8x3.5mm"
 			(at 113.03 118.11 0)
 			(effects
 				(font
@@ -1397,7 +992,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.everlighteurope.com/custom/files/datasheets/DSE-0018112.pdf"
+		(property "Datasheet" "https://downloads.cree-led.com/files/ds/j/JSeries-2835-3V-Consolidated.pdf"
 			(at 113.03 118.11 0)
 			(effects
 				(font
@@ -1453,15 +1048,229 @@
 			)
 		)
 		(pin "1"
-			(uuid "a93fd8b7-79ec-4f64-91c3-dc468a2e5027")
+			(uuid "a93fd8b7-79ec-4f64-91c3-dc468a2e5025")
 		)
 		(pin "2"
-			(uuid "d2298224-2bf1-4d6d-a33e-d757439c4b48")
+			(uuid "d2298224-2bf1-4d6d-a33e-d757439c4b46")
 		)
 		(instances
 			(project ""
 				(path "/c6e6b272-1bb8-4e40-beee-59a44bd978ba"
 					(reference "D4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_Filled")
+		(at 113.03 107.95 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "68d35af4-4799-450e-9519-6c52ec61f9cc")
+		(property "Reference" "D3"
+			(at 116.84 106.9974 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "White"
+			(at 116.84 109.5374 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "irex_LED_SMD:LED_Cree_J-Series_SMD2835_2.8x3.5mm"
+			(at 113.03 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://downloads.cree-led.com/files/ds/j/JSeries-2835-3V-Consolidated.pdf"
+			(at 113.03 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode, filled shape"
+			(at 113.03 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 116.84 112.0774 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "MPN" "JB2835AWT-W-H40GA0000-N0000001"
+			(at 113.03 107.95 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC PN" ""
+			(at 113.03 107.95 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" "2138-JB2835AWT-W-H40GA0000-N0000001CT-ND"
+			(at 113.03 107.95 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a93fd8b7-79ec-4f64-91c3-dc468a2e5026")
+		)
+		(pin "2"
+			(uuid "d2298224-2bf1-4d6d-a33e-d757439c4b47")
+		)
+		(instances
+			(project ""
+				(path "/c6e6b272-1bb8-4e40-beee-59a44bd978ba"
+					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_Filled")
+		(at 113.03 148.59 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7ace2363-3f14-450f-9082-3fb3b5e52c2c")
+		(property "Reference" "D7"
+			(at 116.84 147.6374 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "White"
+			(at 116.84 150.1774 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "irex_LED_SMD:LED_Cree_J-Series_SMD2835_2.8x3.5mm"
+			(at 113.03 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://downloads.cree-led.com/files/ds/j/JSeries-2835-3V-Consolidated.pdf"
+			(at 113.03 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode, filled shape"
+			(at 113.03 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 116.84 152.7174 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "MPN" "JB2835AWT-W-H40GA0000-N0000001"
+			(at 113.03 148.59 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC PN" ""
+			(at 113.03 148.59 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" "2138-JB2835AWT-W-H40GA0000-N0000001CT-ND"
+			(at 113.03 148.59 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3c901a62-0ea7-42bc-8369-d1bd56e47f50")
+		)
+		(pin "2"
+			(uuid "8d03016d-6c75-4ab3-8081-5c52595ee73f")
+		)
+		(instances
+			(project "Light Board - X"
+				(path "/c6e6b272-1bb8-4e40-beee-59a44bd978ba"
+					(reference "D7")
 					(unit 1)
 				)
 			)
@@ -1476,7 +1285,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "916134b2-9ec7-4b59-9c72-797e4aa835ea")
+		(uuid "879c00ea-3a61-4dae-b29f-847db19bd96d")
 		(property "Reference" "J2"
 			(at 100.33 172.72 0)
 			(effects
@@ -1529,11 +1338,20 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" ""
+			(at 100.33 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
-			(uuid "d302c936-d387-4697-8c1b-78e408236045")
+			(uuid "f8dc8309-72d7-444e-8330-418e97f33a2a")
 		)
 		(instances
-			(project "Light Board - X"
+			(project ""
 				(path "/c6e6b272-1bb8-4e40-beee-59a44bd978ba"
 					(reference "J2")
 					(unit 1)
@@ -1543,16 +1361,16 @@
 	)
 	(symbol
 		(lib_id "Device:LED_Filled")
-		(at 113.03 87.63 90)
+		(at 113.03 138.43 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "9c8f93e8-093d-4507-a0fb-04940fe0c77c")
-		(property "Reference" "D1"
-			(at 116.84 86.6774 90)
+		(uuid "90562696-f8f1-42ff-8a8c-aa34f6b47000")
+		(property "Reference" "D6"
+			(at 116.84 137.4774 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1561,7 +1379,7 @@
 			)
 		)
 		(property "Value" "White"
-			(at 116.84 89.2174 90)
+			(at 116.84 140.0174 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1569,8 +1387,8 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_Everlight-SMD3528_3.5x2.8mm_67-21ST"
-			(at 113.03 87.63 0)
+		(property "Footprint" "irex_LED_SMD:LED_Cree_J-Series_SMD2835_2.8x3.5mm"
+			(at 113.03 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1578,8 +1396,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.everlighteurope.com/custom/files/datasheets/DSE-0018112.pdf"
-			(at 113.03 87.63 0)
+		(property "Datasheet" "https://downloads.cree-led.com/files/ds/j/JSeries-2835-3V-Consolidated.pdf"
+			(at 113.03 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1588,7 +1406,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode, filled shape"
-			(at 113.03 87.63 0)
+			(at 113.03 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1597,7 +1415,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 116.84 91.7574 90)
+			(at 116.84 142.5574 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1607,7 +1425,7 @@
 			)
 		)
 		(property "MPN" "JB2835AWT-W-H40GA0000-N0000001"
-			(at 113.03 87.63 90)
+			(at 113.03 138.43 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1616,7 +1434,7 @@
 			)
 		)
 		(property "LCSC PN" ""
-			(at 113.03 87.63 90)
+			(at 113.03 138.43 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1625,7 +1443,197 @@
 			)
 		)
 		(property "DigiKey PN" "2138-JB2835AWT-W-H40GA0000-N0000001CT-ND"
-			(at 113.03 87.63 90)
+			(at 113.03 138.43 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a93fd8b7-79ec-4f64-91c3-dc468a2e5027")
+		)
+		(pin "2"
+			(uuid "d2298224-2bf1-4d6d-a33e-d757439c4b48")
+		)
+		(instances
+			(project ""
+				(path "/c6e6b272-1bb8-4e40-beee-59a44bd978ba"
+					(reference "D6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 100.33 78.74 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "916134b2-9ec7-4b59-9c72-797e4aa835ea")
+		(property "Reference" "J1"
+			(at 100.33 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "V+"
+			(at 100.33 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_2.0x2.0mm"
+			(at 100.33 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 100.33 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 100.33 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" ""
+			(at 100.33 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" ""
+			(at 100.33 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d302c936-d387-4697-8c1b-78e408236045")
+		)
+		(instances
+			(project "Light Board - X"
+				(path "/c6e6b272-1bb8-4e40-beee-59a44bd978ba"
+					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_Filled")
+		(at 113.03 168.91 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9c8f93e8-093d-4507-a0fb-04940fe0c77c")
+		(property "Reference" "D9"
+			(at 116.84 167.9574 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "White"
+			(at 116.84 170.4974 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "irex_LED_SMD:LED_Cree_J-Series_SMD2835_2.8x3.5mm"
+			(at 113.03 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://downloads.cree-led.com/files/ds/j/JSeries-2835-3V-Consolidated.pdf"
+			(at 113.03 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode, filled shape"
+			(at 113.03 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 116.84 173.0374 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "MPN" "JB2835AWT-W-H40GA0000-N0000001"
+			(at 113.03 168.91 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC PN" ""
+			(at 113.03 168.91 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" "2138-JB2835AWT-W-H40GA0000-N0000001CT-ND"
+			(at 113.03 168.91 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1642,7 +1650,7 @@
 		(instances
 			(project ""
 				(path "/c6e6b272-1bb8-4e40-beee-59a44bd978ba"
-					(reference "D1")
+					(reference "D9")
 					(unit 1)
 				)
 			)
@@ -1654,4 +1662,195 @@
 		)
 	)
 	(embedded_fonts no)
+	(embedded_files
+		(file
+			(name "irex_SCH_Logo-Text-Narrow.kicad_wks")
+			(type worksheet)
+			(data |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
+				HfzSPoHw79e7HeP5FwU=|
+			)
+			(checksum "1F12667EA0C416682CF913E978A7BF58")
+		)
+	)
 )
