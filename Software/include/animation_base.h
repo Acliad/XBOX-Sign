@@ -19,17 +19,20 @@ typedef enum {
     ANIMATION_STATUS_RUNNING,
 } animation_status_t;
 
-typedef struct {
+typedef struct led_node led_node_t;
+
+struct led_node {
     led_t *led;
-    led_t *next;
-} led_node_t;
+    struct led_node *next;
+};
 
-typedef struct animation_base_t;
+typedef struct animation_base animation_base_t;
 
-typedef struct {
-    void (*animation_add_led)(animation_base_t* self, led_t *led);
-    animation_status_t (*animation_update)(animation_base_t* self, uint32_t dt_ms);
+struct animation_base {
+    void (*animation_add_led)(struct animation_base* self, led_t *led);
+    animation_status_t (*animation_update)(struct animation_base* self, uint32_t dt_ms);
     led_node_t* _head;
-} animation_base_t;
+    animation_status_t status;
+};
 
 void animation_base_add_led(animation_base_t* self, led_t *led);

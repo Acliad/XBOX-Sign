@@ -29,6 +29,25 @@ target_link_libraries(led PUBLIC
     hardware_pwm
 )
 
+add_library(animation_base STATIC
+    src/animation_base.c
+)
+target_link_libraries(animation_base PUBLIC 
+    xbox_sign_headers
+    PRIVATE
+    pico_stdlib
+)
+
+add_library(animation_transition STATIC
+    src/animation_transition.c
+)
+target_link_libraries(animation_transition PUBLIC 
+    xbox_sign_headers
+    PRIVATE
+    pico_stdlib
+    animation_base
+)
+
 add_executable(xbox_sign
     src/main.c
 )
@@ -41,6 +60,7 @@ target_link_libraries(xbox_sign
     pico_stdlib 
     hardware_gpio 
     led
+    animation_transition
 )
 
 # uf2/hex outputs

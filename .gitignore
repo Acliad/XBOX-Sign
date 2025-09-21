@@ -3,7 +3,7 @@
 **/playground
 
 # Build related ignores
-**/build
+**/build/
 
 ###################################################################
 # Below is a collection of ignores for KiCAD related files
