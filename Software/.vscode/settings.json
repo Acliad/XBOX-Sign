@@ -2,7 +2,11 @@
     "files.associations": {
         "*.h": "c",
         "*.ino": "cpp",
+        "*.cps": "javascript",
         "*.kicad_jobset": "json",
-        "cstdlib": "c"
+        "cstdlib": "c",
+        "bit": "c",
+        "limits": "c",
+        "type_traits": "c"
     }
 }

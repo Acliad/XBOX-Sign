@@ -10,12 +10,15 @@
  */
 
 #include <pico/stdlib.h>
+#include <stdio.h>
 #include "animation_transition.h"
 #include "led_transition_lut.h"
 
 void animation_transition_init(animation_transition_t *self) {
     self->base.animation_add_led = animation_base_add_led;
     self->base.animation_update = animation_transition_update;
+    self->base.animation_start = animation_start;
+    self->base.animation_stop = animation_stop;
     self->base.status = ANIMATION_STATUS_STOPPED;
     self->base._head = NULL;
 
@@ -41,8 +44,8 @@ void animation_transition_set(animation_transition_t *self, float target_brightn
 
 animation_status_t animation_transition_update(animation_base_t *self_base, uint32_t dt_ms) {
     animation_transition_t *self = (animation_transition_t *)self_base;
-    if (self->base._head == NULL || !self->base.status == ANIMATION_STATUS_RUNNING) {
-        return ANIMATION_STATUS_STOPPED; // Leave early if there's nothing to do
+    if (self->base._head == NULL || self->base.status != ANIMATION_STATUS_RUNNING) {
+        return self->base.status; // Leave early if there's nothing to do
     }
 
     float brightness = 0.0f;

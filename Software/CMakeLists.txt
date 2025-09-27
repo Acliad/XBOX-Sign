@@ -48,6 +48,27 @@ target_link_libraries(animation_transition PUBLIC
     animation_base
 )
 
+add_library(animation_breathe STATIC
+    src/animation_breathe.c
+)
+target_link_libraries(animation_breathe PUBLIC 
+    xbox_sign_headers
+    m
+    PRIVATE
+    pico_stdlib
+    animation_base
+)
+
+add_library(animation_sweep STATIC
+    src/animation_sweep.c
+)
+target_link_libraries(animation_sweep PUBLIC 
+    xbox_sign_headers
+    PRIVATE
+    pico_stdlib
+    animation_base
+)
+
 add_executable(xbox_sign
     src/main.c
 )
@@ -61,6 +82,8 @@ target_link_libraries(xbox_sign
     hardware_gpio 
     led
     animation_transition
+    animation_breathe
+    animation_sweep
 )
 
 # uf2/hex outputs
