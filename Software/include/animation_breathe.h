@@ -34,9 +34,30 @@ typedef struct {
  */
 void animation_breathe_init(animation_breathe_t *self);
 
-
+/**
+ * @brief Set the amplitude of the breathing effect. This controls how far the brightness varies. A value of 0.5f would
+ * vary the brightness from (bias + 0.0f) to (bias + 0.5f).
+ *
+ * @param self Pointer to the breathe animation
+ * @param amplitude The amplitude of the breathing effect (0 to 1.0f)
+ */
 void animation_breathe_set_amplitude(animation_breathe_t *self, float amplitude);
+
+/**
+ * @brief Set the bias of the breathing effect. This controls the minimum brightness level. A value of 0.2f would
+ * ensure the brightness never goes below 20%.
+ * 
+ * @param self Pointer to the breathe animation
+ * @param bias The bias to 
+ */
 void animation_breathe_set_bias(animation_breathe_t *self, float bias);
+
+/**
+ * @brief Set the period of the breathing effect. This controls how long it takes to complete one full cycle.
+ * 
+ * @param self Pointer to the breathe animation
+ * @param period_ms Period in milliseconds (e.g., 5000 for a 5 second cycle)
+ */
 void animation_breathe_set_period(animation_breathe_t *self, uint32_t period_ms);
 
 /**

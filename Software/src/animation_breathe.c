@@ -29,10 +29,20 @@ void animation_breathe_init(animation_breathe_t *self) {
 }
 
 void animation_breathe_set_amplitude(animation_breathe_t *self, float amplitude) {
+    if (amplitude < 0.0f) {
+        amplitude = 0.0f;
+    } else if (amplitude > 1.0f) {
+        amplitude = 1.0f;
+    }
     self->_amplitude = amplitude;
 }
 
 void animation_breathe_set_bias(animation_breathe_t *self, float bias) {
+    if (bias < 0.0f) {
+        bias = 0.0f;
+    } else if (bias > 1.0f) {
+        bias = 1.0f;
+    }
     self->_bias = bias;
 }
 

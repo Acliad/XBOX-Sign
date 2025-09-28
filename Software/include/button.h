@@ -49,25 +49,74 @@ typedef struct {
     bool     _long_fired;
 
     // Events
-    uint32_t _pending_events; // bitmask of button_event_t
+    button_event_t _pending_events; // bitmask of button_event_t
 } button_t;
 
-// Init as active-low with pull-up by default
+/**
+ * @brief Initialize the button. Must be called before use.
+ * 
+ * @param button Pointer to the button instance
+ * @param pin GPIO pin number for the button
+ */
 void button_init(button_t *button, uint32_t pin);
 
-// Optional: configure polarity/parameters
+/**
+ * @brief Set whether the button is active low (pressed = low) or active high (pressed = high).
+ * 
+ * @param button Pointer to the button instance
+ * @param active_low True for active low, false for active high
+ */
 void button_set_active_low(button_t *button, bool active_low);
+
+/**
+ * @brief Set the debounce time for the button. A press event is only registered if the button state is stable for this
+ * duration.
+ * 
+ * @param button Pointer to the button instance
+ * @param debounce_ms Debounce time in milliseconds
+ */
 void button_set_debounce(button_t *button, uint32_t debounce_ms);
+
+/**
+ * @brief Set the long press time for the button. A long press event is registered if the button is held for this
+ * duration.
+ *
+ * @param button Pointer to the button instance
+ * @param long_press_ms Time in milliseconds to classify as a long press
+ */
 void button_set_long_press_time(button_t *button, uint32_t long_press_ms);
 
-// Call often (e.g., every loop); handles debouncing and event generation
+/**
+ * @brief Update the button state. Call this function frequently (e.g., every loop) to handle debouncing and event
+ * generation.
+ *
+ * @param button Pointer to the button instance
+ * @param dt_ms Delta time in milliseconds since last call
+ */
 void button_update(button_t *button, uint32_t dt_ms);
 
-// Read debounced state
+/**
+ * @brief Get the current debounced state of the button.
+ * 
+ * @param button Pointer to the button instance
+ * @return button_state_t 
+ */
 button_state_t button_get_state(const button_t *button);
 
-// Fetch and clear pending events bitmask (OR of button_event_t)
+/**
+ * @brief Poll for button events and clear the pending events. Returns a bitmask of button_event_t values.
+ * 
+ * @param button Pointer to the button instance
+ * @return button_event_t Bitmask of events that occurred since the last call to this function
+ */
 uint32_t button_poll_events(button_t *button);
 
-// Utility to test a bitmask
+/**
+ * @brief Check if a specific button event is present in the event mask.
+ * 
+ * @param events Button event bitmask from button_poll_events
+ * @param ev Bitmask of event(s) to check for
+ * @return true if *any* of the event(s) are present
+ * @return false if the event(s) are not present
+ */
 static inline bool button_has_event(uint32_t events, button_event_t ev) { return (events & ev) != 0; }

@@ -23,5 +23,20 @@ typedef struct {
     uint32_t     _channel;
 } led_t;
 
-bool led_init(led_t* led, uint32_t pin);
+/**
+ * @brief Initialize the LED. Must be called before use.
+ * 
+ * @param led Pointer to the LED instance to initialize
+ * @param pin GPIO pin the LED is on
+ * @return true 
+ * @return false 
+ */
+void led_init(led_t* led, uint32_t pin);
+
+/**
+ * @brief Set the brightness of the LED.
+ * 
+ * @param led Pointer to the LED instance to set brightness of
+ * @param brightness Brightness level from 0.0 to 1.0
+ */
 void led_set_brightness(led_t* led, float brightness);

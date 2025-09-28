@@ -44,24 +44,24 @@ void animation_transition_set(animation_transition_t *self, float target_brightn
     }
 }
 
-void animation_transition_start(animation_base_t *self) {
-    if (self == NULL) {
+void animation_transition_start(animation_base_t *self_base) {
+    if (self_base == NULL) {
         return;
     }
-    animation_transition_t *transition = (animation_transition_t *)self;
+    animation_transition_t *transition = (animation_transition_t *)self_base;
     transition->_transistion_current_ms = 0;
-    if (self->_head) {
-        animation_transition_node_t *current_node = (animation_transition_node_t *)self->_head;
+    if (self_base->_head) {
+        animation_transition_node_t *current_node = (animation_transition_node_t *)self_base->_head;
         while (current_node != NULL) {
             current_node->_transition_start_brightness = current_node->base.led->brightness;
             current_node = (animation_transition_node_t *)current_node->base.next;
         }
     }
-    animation_start(self);
+    animation_start(self_base);
 }
 
-void animation_transition_add_led(animation_base_t *self, led_t *led) {
-    if (self == NULL || led == NULL) {
+void animation_transition_add_led(animation_base_t *self_base, led_t *led) {
+    if (self_base == NULL || led == NULL) {
         return;
     }
     animation_transition_node_t *new_node = (animation_transition_node_t *)malloc(sizeof(animation_transition_node_t));
@@ -69,7 +69,7 @@ void animation_transition_add_led(animation_base_t *self, led_t *led) {
         new_node->base.next = NULL;
         new_node->base.led = led;
         new_node->_transition_start_brightness = led->brightness;
-        animation_base_add_led_node(self, (led_node_t *)new_node);
+        animation_base_add_led_node(self_base, (led_node_t *)new_node);
     }
 }
 

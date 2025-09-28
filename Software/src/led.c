@@ -18,8 +18,8 @@
 #define PWM_CLOCK_DIV_INT 3
 #define PWM_CLOCK_DIV_FRAC 0
 
-bool led_init(led_t *led, uint32_t pin) {
-    if (!led) return false;
+void led_init(led_t *led, uint32_t pin) {
+    if (!led) return;
     // Initialize the struct before setting up the hardware
     led->brightness = 0.0f;
     led->_pin = pin;
@@ -36,7 +36,6 @@ bool led_init(led_t *led, uint32_t pin) {
     pwm_set_clkdiv_int_frac(slice_num, PWM_CLOCK_DIV_INT, PWM_CLOCK_DIV_FRAC); 
     // Start the PWM
     pwm_set_enabled(slice_num, true);
-    return true;
 }
 
 void led_set_brightness(led_t *led, float brightness) {
