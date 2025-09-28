@@ -4,33 +4,38 @@
 #include "pico/time.h"
 #include "led.h"
 #include "button.h"
+#include "config.h"
+#include "pico/bootrom.h"
 #include "animation_transition.h"
 #include "animation_breathe.h"
 #include "animation_sweep.h"
 
 #define arrsizeof(x) (sizeof(x) / sizeof((x)[0]))
 
-#define ANIM_OFF_TRANSITION_TIME_MS 500
+// Number of ms to wait after requesting a config save before actually saving. Debounces multiple save requests.
+#define CONFIG_SAVE_WAIT_MS (10000)
 
-#define ANIM_STATIC_TRANSITION_TIME_MS 400
-#define ANIM_STATIC_1_BRIGHTNESS 1.0f
-#define ANIM_STATIC_2_BRIGHTNESS 0.7f
-#define ANIM_STATIC_3_BRIGHTNESS 0.25f
+#define ANIM_OFF_TRANSITION_TIME_MS (500)
 
-#define ANIM_BREATHE_PERIOD_MS 10000
-#define ANIM_BREATHE_AMPLITUDE 0.8f
-#define ANIM_BREATHE_BIAS      0.2f
+#define ANIM_STATIC_TRANSITION_TIME_MS (400)
+#define ANIM_STATIC_1_BRIGHTNESS (1.0f)
+#define ANIM_STATIC_2_BRIGHTNESS (0.7f)
+#define ANIM_STATIC_3_BRIGHTNESS (0.25f)
 
-#define ANIM_FLOW_PERIOD_MS 15000
-#define ANIM_FLOW_AMPLITUDE ANIM_BREATHE_AMPLITUDE
-#define ANIM_FLOW_BIAS      ANIM_BREATHE_BIAS
+#define ANIM_BREATHE_PERIOD_MS (10000)
+#define ANIM_BREATHE_AMPLITUDE (0.8f)
+#define ANIM_BREATHE_BIAS      (0.2f)
 
-#define ANIM_SWEEP_RISETIME_MS       2500
-#define ANIM_SWEEP_SPEED_LEDS_PER_S  0.9f
-#define ANIM_SWEEP_WINDOW_WIDTH_LEDS 1.35f
-#define ANIM_SWEEP_WRAP_WIDTH_LEDS   6.0f
-#define ANIM_SWEEP_MAX_BRIGHTNESS    1.0f
-#define ANIM_SWEEP_MIN_BRIGHTNESS    0.2f
+#define ANIM_FLOW_PERIOD_MS (15000)
+#define ANIM_FLOW_AMPLITUDE (ANIM_BREATHE_AMPLITUDE)
+#define ANIM_FLOW_BIAS      (ANIM_BREATHE_BIAS)
+
+#define ANIM_SWEEP_RISETIME_MS       (2500)
+#define ANIM_SWEEP_SPEED_LEDS_PER_S  (0.9f)
+#define ANIM_SWEEP_WINDOW_WIDTH_LEDS (1.35f)
+#define ANIM_SWEEP_WRAP_WIDTH_LEDS   (6.0f)
+#define ANIM_SWEEP_MAX_BRIGHTNESS    (1.0f)
+#define ANIM_SWEEP_MIN_BRIGHTNESS    (0.2f)
 
 
 
@@ -51,26 +56,16 @@ typedef enum {
     STATE_TURNING_OFF
 } xbox_sign_state_t;
 
-serial_read_status_t get_line(char* buffer, uint32_t size, uint32_t timeout_ms) {
-    uint32_t start_time = to_ms_since_boot(get_absolute_time());
-    while((to_ms_since_boot(get_absolute_time()) - start_time) < timeout_ms) {
-        if (size <= 1) {
-            return SERIAL_READ_OVERFLOW; // Leave space for null terminator
-        }
-        int c = getchar_timeout_us(0);
-        if (c != PICO_ERROR_TIMEOUT && c != PICO_ERROR_NO_DATA) {
-            *buffer++ = (char)c;
-            if (c == '\n' || c == '\r') {
-                *buffer = '\0'; // Null-terminate the string
-                return SERIAL_READ_OK;
-            }
-            // Continue
-            size--;
-            // Got a character, so reset timeout
-            start_time = to_ms_since_boot(get_absolute_time());
-        }
+void check_program_request(const uint32_t BUTTON_PIN) {
+    // Check if the button is held during startup.
+    gpio_init(BUTTON_PIN);
+    gpio_set_dir(BUTTON_PIN, GPIO_IN); // External pull-up on board
+    printf(">> Checking for reprogram request...\n");
+    if (gpio_get(BUTTON_PIN) == 0) {
+        printf(">> Button held during startup, entering programming mode.\n");
+        sleep_ms(100); // Allow time for message to send
+        reset_usb_boot(0, 0);
     }
-    return SERIAL_READ_TIMEOUT;
 }
 
 int main() {
@@ -89,6 +84,7 @@ int main() {
     printf("#                                         #\n");
     printf("###########################################\n");
 
+    app_config_t app_config;
     const uint32_t BUTTON_PIN = 16;
     const uint32_t SYMBOL_PIN = 22;
     const uint32_t XL_PIN = 21;
@@ -122,10 +118,15 @@ int main() {
         &anim_turn_off.base
     };
     const uint32_t animation_turn_off_index = arrsizeof(animations)-1; 
-    uint32_t current_animation_index = 0;
+    uint32_t current_animation_index = 0; // Default value
 
     // Initialization
-    printf("\n> System initializing...\n\n");
+    printf("\n> System initializing...\n");
+
+    // Check for reprogram request. A little hacky, but no need to go too hard here.
+    // Just check if the button is held during startup.
+    check_program_request(BUTTON_PIN);
+
     button_init(&button, BUTTON_PIN);
     led_init(&led_symbol, SYMBOL_PIN);
     led_init(&led_xl, XL_PIN);
@@ -140,7 +141,18 @@ int main() {
     animation_sweep_init(&anim_sweep);
     animation_transition_init(&anim_turn_off);
 
-    printf("> Adding LEDs to animations...\n");
+    // Load config
+    config_set_defaults(&app_config);
+    bool config_valid = config_load(&app_config) && (app_config.last_animation_index < animation_turn_off_index);
+    if (!config_valid) {
+        printf(">> No valid config found, using defaults.\n");
+    } else {
+        current_animation_index = app_config.last_animation_index;
+        printf(">> Config loaded from flash. Last animation index: %u\n", current_animation_index);
+    }
+
+    // LED and animation setup
+    printf(">> Adding LEDs to animations...\n");
     for (uint32_t i = 0; i < arrsizeof(animations); i++) {
         for (uint32_t j = 0; j < arrsizeof(leds); j++) {
             animations[i]->animation_add_led(animations[i], leds[j]);
@@ -148,7 +160,7 @@ int main() {
     }
 
     // Setup animation
-    printf("> Configuring animations...\n");
+    printf(">> Configuring animations...\n");
     // Breathe
     animation_breathe_set_amplitude(&anim_breathe, ANIM_BREATHE_AMPLITUDE);
     animation_breathe_set_bias(&anim_breathe, ANIM_BREATHE_BIAS);
@@ -177,37 +189,30 @@ int main() {
     animation_transition_set(&anim_static_3, ANIM_STATIC_3_BRIGHTNESS, ANIM_STATIC_TRANSITION_TIME_MS);
     // Turn off
     animation_transition_set(&anim_turn_off, 0.0f, ANIM_OFF_TRANSITION_TIME_MS);
-    // DEBUG >>>>>>>>>>>>>>>>>>>
-    anim_sweep.base.animation_start((animation_base_t*)&anim_sweep);
-    // !DEBUG <<<<<<<<<<<<<<<<<<
 
     printf("> System initialization complete. Starting...\n");
     animations[current_animation_index]->animation_start(animations[current_animation_index]);
-    uint32_t last_time = to_ms_since_boot(get_absolute_time());
+    uint32_t last_loop_time_ms = to_ms_since_boot(get_absolute_time());
+    uint32_t last_save_request_time_ms = to_ms_since_boot(get_absolute_time());
+    bool save_requested = false;
     while (true) {
         sleep_ms(20);
-        uint32_t dt_ms = to_ms_since_boot(get_absolute_time()) - last_time;
-        last_time = to_ms_since_boot(get_absolute_time());
+        uint32_t dt_ms = to_ms_since_boot(get_absolute_time()) - last_loop_time_ms;
+        last_loop_time_ms = to_ms_since_boot(get_absolute_time());
         button_update(&button, dt_ms);
         button_event_t button_events = button_poll_events(&button);
-        // DEBUG >>>>>>>>>>>>>>>>>>>
-        if (button_events != BUTTON_EVENT_NONE) {
-            printf("> Button events: ");
-            if (button_events & BUTTON_EVENT_PRESS) {
-                printf("[PRESS] ");
+
+        // Handle config
+        if (save_requested && (last_loop_time_ms - last_save_request_time_ms) >= CONFIG_SAVE_WAIT_MS) {
+            printf("> Saving config to flash...\n");
+            app_config.last_animation_index = current_animation_index;
+            if (config_save(&app_config)) {
+                printf(">> Config saved.\n");
+            } else {
+                printf(">> [ERROR] Failed to save config!\n");
             }
-            if (button_events & BUTTON_EVENT_LONG_PRESS) {
-                printf("[LONG PRESS] ");
-            }
-            if (button_events & BUTTON_EVENT_RELEASE_SHORT) {
-                printf("[RELEASE SHORT] ");
-            }
-            if (button_events & BUTTON_EVENT_RELEASE_LONG) {
-                printf("[RELEASE LONG] ");
-            }
-            printf("\n");
+            save_requested = false;
         }
-        // !DEBUG <<<<<<<<<<<<<<<<<<
         switch (state)
         {
         case STATE_OFF:
@@ -234,6 +239,10 @@ int main() {
             animations[current_animation_index]->animation_stop(animations[current_animation_index]);
             current_animation_index = (current_animation_index + 1) % (animation_turn_off_index);
             animations[current_animation_index]->animation_start(animations[current_animation_index]);
+
+            // Setup config and request save
+            save_requested = true;
+            last_save_request_time_ms = to_ms_since_boot(get_absolute_time());
             state = STATE_ANIMATING;
             printf("> Switched to animation %u\n", current_animation_index);
             break;
@@ -248,48 +257,6 @@ int main() {
             printf("> [ERROR] In an unknown state!\n");
             break;
         }
-            serial_read_status_t status = get_line(input_buff, sizeof(input_buff), TIMEOUT_MS);
-        // Simple testing, no real parsing
-        // if (status == SERIAL_READ_OK) {
-        //     if (input_buff[0] == '1') {
-        //         gpio_put(XL_PIN, 1);
-        //     } else if (input_buff[0] == '0') {
-        //         gpio_put(XL_PIN, 0);
-        //     }
-        // }
-        /***************************************
-         * Sweep Animation Test
-         ****************************************/
-        // uint32_t dt = to_ms_since_boot(get_absolute_time()) - last_time;
-        // last_time = to_ms_since_boot(get_absolute_time());
-        // animation_sweep_update((animation_base_t*)&anim_sweep, dt);
-        // sleep_ms(10);
-
-        /***************************************
-        * Breathe Animation Test
-        ****************************************/
-    //    uint32_t dt = to_ms_since_boot(get_absolute_time()) - last_time;
-    //    last_time = to_ms_since_boot(get_absolute_time());
-    //    animation_breathe_update((animation_base_t*)&anim_breathe, dt);
-    //    sleep_ms(10);
-
-        /***************************************
-        * Transition Animation Test
-        ****************************************/
-        // animation_transition_set(&anim_transition, 0.5f, 2500);
-        // while (anim_transition.base.status == ANIMATION_STATUS_RUNNING) {
-        //     uint32_t dt = to_ms_since_boot(get_absolute_time()) - last_time;
-        //     last_time = to_ms_since_boot(get_absolute_time());
-        //     animation_transition_update((animation_base_t*)&anim_transition, dt);
-        //     sleep_ms(10);
-        // }
-        // animation_transition_set(&anim_transition, 0.15f, 2500);
-        // while (anim_transition.base.status == ANIMATION_STATUS_RUNNING) {
-        //     uint32_t dt = to_ms_since_boot(get_absolute_time()) - last_time;
-        //     last_time = to_ms_since_boot(get_absolute_time());
-        //     animation_transition_update((animation_base_t*)&anim_transition, dt);
-        //     sleep_ms(10);
-        // }
     }
     return 0;
 }

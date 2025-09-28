@@ -83,13 +83,31 @@ target_link_libraries(button PUBLIC
     hardware_gpio
 )
 
+add_library(config STATIC
+    src/config.c
+)
+target_link_libraries(config PUBLIC 
+    xbox_sign_headers
+    PRIVATE
+    pico_stdlib
+    hardware_flash
+    hardware_sync
+)
+
 pico_enable_stdio_usb(xbox_sign 1)
 pico_enable_stdio_uart(xbox_sign 0)
+
+math(EXPR CONFIG_FLASH_SIZE "4096 * 1") # 4KB reserved for config
+math(EXPR PICO_FLASH_SIZE_BYTES "4*1024*1024") # 4MB flash
+math(EXPR CFG_FLASH_OFFSET "4*1024*1024 - ${CONFIG_FLASH_SIZE}") # 4MB flash minus 4KB reserved for config
 
 # link pico libs
 target_link_libraries(xbox_sign 
     pico_stdlib 
+    hardware_flash
+    hardware_sync
     hardware_gpio 
+    config
     led
     animation_transition
     animation_breathe
