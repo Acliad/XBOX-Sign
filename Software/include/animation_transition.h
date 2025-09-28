@@ -18,10 +18,16 @@ typedef struct animation_transition_t {
     uint32_t         _transistion_current_ms;
     uint32_t         _transition_time_ms;
     float            _target_brightness;
-    float            _transition_start_brightness;
     const float     *_transition_lut;
 } animation_transition_t;
 
+typedef struct animation_transition_node {
+    led_node_t base;
+    float _transition_start_brightness; 
+} animation_transition_node_t;
+
 void animation_transition_init(animation_transition_t *self);
 void animation_transition_set(animation_transition_t *self, float target_brightness, uint32_t transition_time_ms);
+void animation_transition_start(animation_base_t *self);
+void animation_transition_add_led(animation_base_t *self, led_t *led);
 animation_status_t animation_transition_update(animation_base_t *self_base, uint32_t dt_ms);

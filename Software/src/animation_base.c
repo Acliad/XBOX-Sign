@@ -10,7 +10,6 @@
  */
 
  #include "animation_base.h"
- #include <stdio.h>
  #include <stdlib.h>
 
 void animation_base_add_led_node(animation_base_t *self, led_node_t *node) {

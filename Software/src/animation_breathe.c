@@ -12,7 +12,6 @@
 #include <math.h>
 #include <pico/stdlib.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 #define M_2PI (2.0f * M_PI)
 
@@ -61,6 +60,12 @@ void animation_breathe_set_delay(animation_breathe_t *self, uint32_t index, uint
 }
 
 animation_status_t animation_breathe_update(animation_base_t *self_base, uint32_t dt_ms) {
+    if (self_base == NULL) {
+        return ANIMATION_STATUS_STOPPED;
+    } else if (self_base->status != ANIMATION_STATUS_RUNNING || dt_ms == 0) {
+        return self_base->status;
+    }
+    
     animation_breathe_t *self = (animation_breathe_t *)self_base;
 
     float dtheta = M_2PI * (float)(dt_ms) / (float)self->_period_ms;

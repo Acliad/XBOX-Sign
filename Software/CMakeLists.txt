@@ -73,6 +73,16 @@ add_executable(xbox_sign
     src/main.c
 )
 
+add_library(button STATIC
+    src/button.c
+)
+target_link_libraries(button PUBLIC 
+    xbox_sign_headers
+    PRIVATE
+    pico_stdlib
+    hardware_gpio
+)
+
 pico_enable_stdio_usb(xbox_sign 1)
 pico_enable_stdio_uart(xbox_sign 0)
 
@@ -84,6 +94,7 @@ target_link_libraries(xbox_sign
     animation_transition
     animation_breathe
     animation_sweep
+    button
 )
 
 # uf2/hex outputs
